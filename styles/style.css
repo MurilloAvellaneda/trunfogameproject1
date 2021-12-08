@@ -2,3 +2,21 @@ body {
     background-image: url('/images/bearbullimage.jpg');
     background-size: cover;
 }
+
+#video {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#campo-de-batalha {
+    display: flex;
+    justify-content: space-around;
+}
+
+#logo-stock-player, #logo-stock-oponent {
+    width: 300px;
+}
+
+h1 {
+    font-size: 30px;
+}
