@@ -29,6 +29,19 @@ body {
     width: 300px;
 }
 
+input[type="radio"], .opponent-metrics{
+    font-size: 20px;
+    margin: 10px;
+    font-family: monospace
+  }
+
+.opponent-metrics {
+    width: 280px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 33px;
+}
+
 h1 {
     font-size: 30px;
     background-color: white;

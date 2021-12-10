@@ -13,7 +13,7 @@
     </div>
     <div id="campo-de-batalha">
         <section class="player-container">
-            <h1 id="player-card-text">Carta do jogador</h1>
+            <h1>Carta do jogador</h1>
             <div class="image-container">
                 <img id="logo-stock-player" src="images/bull-vs-bear.jpg">
             </div>
@@ -21,7 +21,7 @@
                 <h2>Selecione o indicador:</h2>
             <div>
                 <label id="price-over-profits-label" for="priceOverProfits">P/L:</label>
-                <input type="radio" id="price-over-profits" name="stock" value="priceOverProfits" checked>    
+                <input type="radio" id="price-over-profits" name="stock" value="priceOverProfits">    
             </div>
             <div>
                 <label id="dividend-yield-label" for="dividend-yield">DY:</label>
@@ -40,7 +40,19 @@
             <h1>Carta do oponente</h1>
             <div class="image-container">
                 <img id="logo-stock-oponent" src="images/bull-vs-bear.jpg">
-            </div>    
+            </div>
+            <section class="metrics">
+                <h2>Indicadores do adversário:</h2>
+                <div>
+                    <p class="oponent-metrics">P/L:</p>
+                </div>
+                <div>
+                    <p class="oponent-metrics">DY:</p>
+                </div>
+                <div>
+                    <p class="oponent-metrics">ROE:</p>
+                </div>        
+            </section>  
             <div>
                 <button id="oponent-sort-btn" class="sort-stock-button" type="button">Sortear adversário</button>
             </div>
