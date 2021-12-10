@@ -13,10 +13,36 @@ body {
     justify-content: space-around;
 }
 
-#logo-stock-player, #logo-stock-oponent {
+.image-container {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.metrics {
+    background-color: white;
+    padding: 10px;
+}
+
+#logo-stock-player, #logo-stock-oponent, .sort-stock-button {
     width: 300px;
 }
 
 h1 {
     font-size: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+.sort-stock-button {
+    margin:20px 0;
+    font-size: 25px;
+    color: rgb(19,65,101)
+}
+
+.sort-stock-button:hover {
+    background-color: rgb(19,65,101);
+    color: white;
+    cursor: pointer
 }

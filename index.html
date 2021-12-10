@@ -13,12 +13,37 @@
     </div>
     <div id="campo-de-batalha">
         <section class="player-container">
-            <h1>Carta do jogador</h1>
-            <img id="logo-stock-player" src="images/vale-logo.png">
+            <h1 id="player-card-text">Carta do jogador</h1>
+            <div class="image-container">
+                <img id="logo-stock-player" src="images/bull-vs-bear.jpg">
+            </div>
+            <section class="metrics">
+                <h2>Selecione o indicador:</h2>
+            <div>
+                <label id="price-over-profits-label" for="priceOverProfits">P/L:</label>
+                <input type="radio" id="price-over-profits" name="stock" value="priceOverProfits" checked>    
+            </div>
+            <div>
+                <label id="dividend-yield-label" for="dividend-yield">DY:</label>
+                <input type="radio" id="dividend-yield" name="stock" value="huey" >
+            </div>
+            <div>
+                <label id="roe-label" for="roe">ROE:</label>
+                <input type="radio" id="roe" name="stock" value="roe">
+            </div>
+            </section>
+            <div>
+                <button id="player-sort-btn" class="sort-stock-button" type="button">Sortear empresa</button>
+            </div>
         </section>
         <section class ="oponent-container">
             <h1>Carta do oponente</h1>
-            <img id="logo-stock-oponent" src="images/weg-logo.png">
+            <div class="image-container">
+                <img id="logo-stock-oponent" src="images/bull-vs-bear.jpg">
+            </div>    
+            <div>
+                <button id="oponent-sort-btn" class="sort-stock-button" type="button">Sortear adversário</button>
+            </div>
         </section>
     </div>
     <script type="text/javascript" src ="scripts/script.js"></script>
