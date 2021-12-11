@@ -20,6 +20,15 @@ body {
     background-color: white;
 }
 
+#round-counter {
+    display: flex;
+    align-items: center;
+}
+
+h4 {
+    background-color: white;
+}
+
 .metrics {
     background-color: white;
     padding: 10px;
@@ -29,13 +38,13 @@ body {
     width: 300px;
 }
 
-input[type="radio"], .opponent-metrics{
+input[type="radio"] {
     font-size: 20px;
     margin: 10px;
     font-family: monospace
-  }
+}
 
-.opponent-metrics {
+.oponent-metrics {
     width: 280px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -58,4 +67,14 @@ h1 {
     background-color: rgb(19,65,101);
     color: white;
     cursor: pointer
+}
+
+#result {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+#result > img {
+    width: 650px;
 }
