@@ -74,28 +74,25 @@ const clickOponentSortCardBtn = () => {
 const checkRoundWinner = (playerEnterpriseStock, oponentEnterpriseStock) => {   
     let playerValue = 0;
     let oponentValue = 0;
+    const summaryElement = document.createElement("h5");
+    summaryElement.setAttribute("id", "summary");
+    document.getElementById("round-counter").appendChild(summaryElement);
     if(document.getElementById("price-over-profits").checked) { 
         playerValue = playerEnterpriseStock.priceOverProfits;
-        console.log(playerValue);
         oponentValue = oponentEnterpriseStock.priceOverProfits;
-        console.log(oponentValue);
     } else if(document.getElementById("dividend-yield").checked) { 
         playerValue = playerEnterpriseStock.dividendYield;
-        console.log(playerValue);
         oponentValue = oponentEnterpriseStock.dividendYield;
-        console.log(oponentValue);
     } else if(document.getElementById("roe").checked) { 
         playerValue = playerEnterpriseStock.roe;
-        console.log(playerValue);
         oponentValue = oponentEnterpriseStock.roe;
-        console.log(oponentValue);
     }
     if(playerValue > oponentValue){
-        console.log("Player won round");
         document.getElementById("player-score").innerHTML = `Pontuação: ${playerScore +=1}`;
+        summaryElement.innerText = `Jogador venceu rodada ${rounds + 1}`
     } else if (playerValue < oponentValue){
-        console.log("Oponent won round");
         document.getElementById("oponent-score").innerHTML = `Pontuação: ${oponentScore +=1}`;
+        summaryElement.innerText = `Jogador perdeu rodada ${rounds + 1}`
     }
 }
 
@@ -112,23 +109,21 @@ const checkMasterOfStocks  = () => {
         const fatherDiv = battleFieldElement.parentNode;
         fatherDiv.insertBefore(sectionElement, battleFieldElement);
         if(playerScore > oponentScore){
-            console.log("Player is the Master of Stocks");
             const winImg = document.createElement("img");
             const winText = document.createElement("p");
-            winText.innerText = "Parabéns, você é o Mestre das Ações!!!!" 
+            winText.innerText = `Placar final: ${playerScore} x ${oponentScore}. Parabéns, você é o Mestre das Ações!` 
             winImg.src = `images/b3-bull.jpg`;
             document.getElementById("result").appendChild(winText);
             document.getElementById("result").appendChild(winImg);
         } else if (playerScore < oponentScore){
-            console.log("Oponent is the Master of Stocks");
             const lossImg = document.createElement("img");
             const lossText = document.createElement("p");
-            lossText.innerText = "É tempo de vacas magras. Mais sorte da próxima vez, Trader!!!!" 
+            lossText.innerText = `Placar final: ${playerScore} x ${oponentScore}. É tempo de vacas magras!` 
             lossImg.src = `images/fit-cow-b3.jpeg`;
             document.getElementById("result").appendChild(lossText);
             document.getElementById("result").appendChild(lossImg);
         }
-    window.scrollTo({ top: 170, behavior: 'smooth' })    
+    window.scrollTo({ top: 0, behavior: 'smooth' })    
     }
 }
 
@@ -141,24 +136,17 @@ document.getElementById("player-sort-btn").addEventListener("click", () => {
         playerSortedCards.push(stock.ticker);
         showPlayerCard(stock);
         enterpriseCards.splice(enterpriseCards.indexOf(stock), 1);
-        //console.log(`player tickers: ${playerSortedCards}`);
     }
 });
 
 document.getElementById("oponent-sort-btn").addEventListener("click", () => {
     let stock = sortCard(enterpriseCardsCopy);
-    //console.log(stock);
     oponentSortedCards.push(stock.ticker);
-    //console.log(`oponent sorted cards: ${oponentSortedCards}`);
     if(playerSortedCards[playerSortedCards.length - 1] !== oponentSortedCards[oponentSortedCards.length - 1] ) {
-        //console.log(`oponent tickers: ${oponentSortedCards}`);
         showOponentCard(stock);
         enterpriseCardsCopy.splice(enterpriseCardsCopy.indexOf(stock), 1);
-        console.log(playerSortedCards);
         checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
         rounds += 1;
-        console.log(maxCards);
-        console.log(rounds);
         checkMasterOfStocks();
     } else if (playerSortedCards[playerSortedCards.length - 1] === oponentSortedCards[oponentSortedCards.length - 1] && playerSortedCards.length === maxCards){
         console.log("Empate na última rodada, sem pontos adicionados");
@@ -167,9 +155,6 @@ document.getElementById("oponent-sort-btn").addEventListener("click", () => {
     } else {
         while(playerSortedCards[playerSortedCards.length - 1] === oponentSortedCards[oponentSortedCards.length - 1]){
             oponentSortedCards.splice(oponentSortedCards.indexOf(stock), 1);
-            //console.log(oponentSortedCards);
-            //console.log(`Desculpe, mesma carta: ${stock.ticker}`)
-            //console.log(stock)
             clickOponentSortCardBtn();
         }
     }

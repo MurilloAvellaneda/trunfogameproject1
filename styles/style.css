@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/bearbullimage.jpg');
+    background-image: url('../images/bearbullimage2.jpg');
     background-size: cover;
 }
 
@@ -23,10 +23,20 @@ body {
 #round-counter {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 h4 {
     background-color: white;
+    font-size: 22px;
+    border-bottom: rgb(114,51,20) solid 2px
+}
+
+h5 { 
+    background-color: white;
+    font-size: 18px;
+    margin: 16px;
+    border: rgb(114,51,20) solid 2px;
 }
 
 .metrics {
@@ -52,13 +62,15 @@ input[type="radio"] {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 28px;
     background-color: white;
     text-align: center;
+    border-bottom: rgb(114,51,20) solid 2px;
+    margin: 10px 0 0;
 }
 
 .sort-stock-button {
-    margin:20px 0;
+    margin:5px 0;
     font-size: 25px;
     color: rgb(19,65,101)
 }
@@ -76,5 +88,5 @@ h1 {
 }
 
 #result > img {
-    width: 650px;
+    width: 685px;
 }
