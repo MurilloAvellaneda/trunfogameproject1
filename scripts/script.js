@@ -116,7 +116,7 @@ const checkMasterOfStocks  = () => {
             const winImg = document.createElement("img");
             const winText = document.createElement("p");
             winText.innerText = "Parabéns, você é o Mestre das Ações!!!!" 
-            winImg.src = "./images/b3-bull.jpg";
+            winImg.src = "/images/b3-bull.jpg";
             document.getElementById("result").appendChild(winText);
             document.getElementById("result").appendChild(winImg);
         } else if (playerScore < oponentScore){
@@ -124,7 +124,7 @@ const checkMasterOfStocks  = () => {
             const lossImg = document.createElement("img");
             const lossText = document.createElement("p");
             lossText.innerText = "É tempo de vacas magras. Mais sorte da próxima vez, Trader!!!!" 
-            lossImg.src = "./images/fit-cow-b3.jpeg";
+            lossImg.src = "/images/fit-cow-b3.jpeg";
             document.getElementById("result").appendChild(lossText);
             document.getElementById("result").appendChild(lossImg);
         }
