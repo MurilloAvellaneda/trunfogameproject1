@@ -1,0 +1,1 @@
+#SUPER TRUNFO - AÇÕES
