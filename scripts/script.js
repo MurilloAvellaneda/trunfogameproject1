@@ -122,7 +122,7 @@ const checkMasterOfStocks  = () => {
             document.getElementById("result").appendChild(lossText);
             document.getElementById("result").appendChild(lossImg);
         }
-    window.scrollTo({ top: 0, behavior: 'smooth' })    
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
     }
 }
 
