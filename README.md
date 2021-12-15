@@ -56,5 +56,6 @@ As características presentes nas cartas são indicadores financeiros:
 
 #### Proponha uma funcionalidade
 Crie um pull request com a sua proposta de mudança no repositório do jogo.
-Obrigado!
-Ótimo jogo 👾
+Obrigado!  
+
+[JOGAR](https://murilloavellaneda.github.io/trunfogameproject1/) 👾
