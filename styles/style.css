@@ -44,7 +44,7 @@ h5 {
     padding: 10px;
 }
 
-#logo-stock-player, #logo-stock-oponent, .sort-stock-button {
+#logo-stock-player, #logo-stock-opponent, .sort-stock-button {
     width: 300px;
 }
 
@@ -54,7 +54,7 @@ input[type="radio"] {
     font-family: monospace
 }
 
-.oponent-metrics {
+.opponent-metrics {
     width: 280px;
     margin-top: 0px;
     margin-bottom: 0px;

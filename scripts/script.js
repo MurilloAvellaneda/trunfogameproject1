@@ -39,10 +39,10 @@ const enterpriseCards = [
 
 // Variables
 let playerScore = 0;
-let oponentScore = 0;
+let opponentScore = 0;
 let rounds = 0;
 const playerSortedCards = [];
-const oponentSortedCards = [];
+const opponentSortedCards = [];
 const playerSortedCardsObject = [];
 const maxCards = enterpriseCards.length;
 const enterpriseCardsCopy = JSON.parse(JSON.stringify(enterpriseCards));
@@ -59,46 +59,45 @@ const showPlayerCard = (enterpriseStock) => {
     document.getElementById("player-roe-label").innerHTML = `ROE: ${enterpriseStock.roe}%`;
 }
 
-const showOponentCard = (enterpriseStock) => {
-    document.getElementById("logo-stock-oponent").src=enterpriseStock.image;
-    document.getElementById("oponent-price-over-profits-label").innerHTML = `P/L: ${enterpriseStock.priceOverProfits}`;
-    document.getElementById("oponent-dividend-yield-label").innerHTML = `DY: ${enterpriseStock.dividendYield}%`;
-    document.getElementById("oponent-roe-label").innerHTML = `ROE: ${enterpriseStock.roe}%`;
+const showOpponentCard = (enterpriseStock) => {
+    document.getElementById("logo-stock-opponent").src=enterpriseStock.image;
+    document.getElementById("opponent-price-over-profits-label").innerHTML = `P/L: ${enterpriseStock.priceOverProfits}`;
+    document.getElementById("opponent-dividend-yield-label").innerHTML = `DY: ${enterpriseStock.dividendYield}%`;
+    document.getElementById("opponent-roe-label").innerHTML = `ROE: ${enterpriseStock.roe}%`;
 }
 
 
-const clickOponentSortCardBtn = () => {
-    document.getElementById("oponent-sort-btn").click();
+const clickOpponentSortCardBtn = () => {
+    document.getElementById("opponent-sort-btn").click();
 }
 
-const checkRoundWinner = (playerEnterpriseStock, oponentEnterpriseStock) => {   
+const checkRoundWinner = (playerEnterpriseStock, opponentEnterpriseStock) => {   
     let playerValue = 0;
-    let oponentValue = 0;
+    let opponentValue = 0;
     const summaryElement = document.createElement("h5");
     summaryElement.setAttribute("id", "summary");
     document.getElementById("round-counter").appendChild(summaryElement);
     if(document.getElementById("price-over-profits").checked) { 
         playerValue = playerEnterpriseStock.priceOverProfits;
-        oponentValue = oponentEnterpriseStock.priceOverProfits;
+        opponentValue = opponentEnterpriseStock.priceOverProfits;
     } else if(document.getElementById("dividend-yield").checked) { 
         playerValue = playerEnterpriseStock.dividendYield;
-        oponentValue = oponentEnterpriseStock.dividendYield;
+        opponentValue = opponentEnterpriseStock.dividendYield;
     } else if(document.getElementById("roe").checked) { 
         playerValue = playerEnterpriseStock.roe;
-        oponentValue = oponentEnterpriseStock.roe;
+        opponentValue = opponentEnterpriseStock.roe;
     }
-    if(playerValue > oponentValue){
+    if(playerValue > opponentValue){
         document.getElementById("player-score").innerHTML = `Pontuação: ${playerScore +=1}`;
         summaryElement.innerText = `Jogador venceu rodada ${rounds + 1}`
-    } else if (playerValue < oponentValue){
-        document.getElementById("oponent-score").innerHTML = `Pontuação: ${oponentScore +=1}`;
+    } else if (playerValue < opponentValue){
+        document.getElementById("opponent-score").innerHTML = `Pontuação: ${opponentScore +=1}`;
         summaryElement.innerText = `Jogador perdeu rodada ${rounds + 1}`
     }
 }
 
 const hasPlayedAllRounds = (numberOfCards, numberOfRounds) => {
-    let hasCompleteGame = numberOfCards === numberOfRounds ? true : false;
-    return hasCompleteGame;
+    return numberOfCards === numberOfRounds;
 }
 
 const checkMasterOfStocks  = () => {
@@ -108,17 +107,17 @@ const checkMasterOfStocks  = () => {
         const battleFieldElement = document.getElementById("campo-de-batalha");
         const fatherDiv = battleFieldElement.parentNode;
         fatherDiv.insertBefore(sectionElement, battleFieldElement);
-        if(playerScore > oponentScore){
+        if(playerScore > opponentScore){
             const winImg = document.createElement("img");
             const winText = document.createElement("p");
-            winText.innerText = `Placar final: ${playerScore} x ${oponentScore}. Parabéns, você é o Mestre das Ações!` 
+            winText.innerText = `Placar final: ${playerScore} x ${opponentScore}. Parabéns, você é o Mestre das Ações!` 
             winImg.src = `images/b3-bull.jpg`;
             document.getElementById("result").appendChild(winText);
             document.getElementById("result").appendChild(winImg);
-        } else if (playerScore < oponentScore){
+        } else if (playerScore < opponentScore){
             const lossImg = document.createElement("img");
             const lossText = document.createElement("p");
-            lossText.innerText = `Placar final: ${playerScore} x ${oponentScore}. É tempo de vacas magras!` 
+            lossText.innerText = `Placar final: ${playerScore} x ${opponentScore}. É tempo de vacas magras!` 
             lossImg.src = `images/fit-cow-b3.jpeg`;
             document.getElementById("result").appendChild(lossText);
             document.getElementById("result").appendChild(lossImg);
@@ -139,23 +138,23 @@ document.getElementById("player-sort-btn").addEventListener("click", () => {
     }
 });
 
-document.getElementById("oponent-sort-btn").addEventListener("click", () => {
+document.getElementById("opponent-sort-btn").addEventListener("click", () => {
     let stock = sortCard(enterpriseCardsCopy);
-    oponentSortedCards.push(stock.ticker);
-    if(playerSortedCards[playerSortedCards.length - 1] !== oponentSortedCards[oponentSortedCards.length - 1] ) {
-        showOponentCard(stock);
+    opponentSortedCards.push(stock.ticker);
+    if(playerSortedCards[playerSortedCards.length - 1] !== opponentSortedCards[opponentSortedCards.length - 1] ) {
+        showOpponentCard(stock);
         enterpriseCardsCopy.splice(enterpriseCardsCopy.indexOf(stock), 1);
         checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
         rounds += 1;
         checkMasterOfStocks();
-    } else if (playerSortedCards[playerSortedCards.length - 1] === oponentSortedCards[oponentSortedCards.length - 1] && playerSortedCards.length === maxCards){
+    } else if (playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1] && playerSortedCards.length === maxCards){
         console.log("Empate na última rodada, sem pontos adicionados");
         rounds += 1;
         checkMasterOfStocks();
     } else {
-        while(playerSortedCards[playerSortedCards.length - 1] === oponentSortedCards[oponentSortedCards.length - 1]){
-            oponentSortedCards.splice(oponentSortedCards.indexOf(stock), 1);
-            clickOponentSortCardBtn();
+        while(playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1]){
+            opponentSortedCards.splice(opponentSortedCards.indexOf(stock), 1);
+            clickOpponentSortCardBtn();
         }
     }
     if(rounds +1 <= 5){
