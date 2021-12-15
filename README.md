@@ -34,7 +34,7 @@ Suponha as seguintes rodadas:
 - Adversário: 1 vitória
 - Resultado final: jogador venceu o jogo.  
 
-Neste jogo criamos uma adaptação do Super Trunfo cujo tema é o mercado de ações brasileiro. [Saiba mais sobre o mercado de ações](https://www.infomoney.com.br/guias/mercado-de-acoes/){:target="_blank"}.
+Neste jogo criamos uma adaptação do Super Trunfo cujo tema é o mercado de ações brasileiro. [Saiba mais sobre o mercado de ações](https://www.infomoney.com.br/guias/mercado-de-acoes/).
 
 ### Regras
 
@@ -53,3 +53,8 @@ As características presentes nas cartas são indicadores financeiros:
 - HTML (linguagem de marcação)
 - CSS (linguagem de estilização)
 - Javascript (linguagem de programação)
+
+#### Proponha uma funcionalidade
+Crie um pull request com a sua proposta de mudança no repositório do jogo.
+Obrigado!
+Ótimo jogo :game:
