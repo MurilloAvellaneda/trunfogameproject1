@@ -34,7 +34,7 @@ Suponha as seguintes rodadas:
 - Adversário: 1 vitória
 - Resultado final: jogador venceu o jogo.  
 
-Neste jogo criamos uma adaptação do Super Trunfo cujo tema é o mercado de ações brasileiro. [Saiba mais sobre o mercado de ações](https://www.infomoney.com.br/guias/mercado-de-acoes/).
+Neste jogo criamos uma adaptação do Super Trunfo cujo tema é o mercado de ações brasileiro. [Saiba mais sobre o mercado de ações](https://www.infomoney.com.br/guias/mercado-de-acoes/){:target="_blank"}.
 
 ### Regras
 
