@@ -90,3 +90,20 @@ h1 {
 #result > img {
     width: 685px;
 }
+
+@media (max-width: 850px) {
+    #campo-de-batalha {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .player-container, .opponent-container {
+        width: 300px;
+        margin: auto
+    }
+
+    #result > img {
+        width: 400px;
+    }
+}
