@@ -136,37 +136,43 @@ const checkMasterOfStocks  = () => {
 // Buttons on click
 document.getElementById("player-sort-btn").addEventListener("click", () => {
     const stock = sortCard(enterpriseCards)
-    if(playerSortedCards.indexOf(stock.ticker) === -1) {
+    if(playerSortedCards.indexOf(stock.ticker) === -1 && playerSortedCards.length === opponentSortedCards.length) {
         playerSortedCardsObject.push(stock);
         playerSortedCards.push(stock.ticker);
         showPlayerCard(stock);
         enterpriseCards.splice(enterpriseCards.indexOf(stock), 1);
+    } else {
+        alert("Após selecionar o indicador você deve sortear a carta do adversário");
     }
 });
 
 document.getElementById("opponent-sort-btn").addEventListener("click", () => {
-    let stock = sortCard(enterpriseCardsCopy);
-    opponentSortedCards.push(stock.ticker);
-    if(playerSortedCards[playerSortedCards.length - 1] !== opponentSortedCards[opponentSortedCards.length - 1] ) {
-        showOpponentCard(stock);
-        enterpriseCardsCopy.splice(enterpriseCardsCopy.indexOf(stock), 1);
-        checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
-        rounds += 1;
-        checkMasterOfStocks();
-    } else if (playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1] && playerSortedCards.length === maxCards){
-        console.log("Empate na última rodada, sem pontos adicionados");
-        checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
-        rounds += 1;
-        checkMasterOfStocks();
-    } else {
-        while(playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1]){
-            opponentSortedCards.splice(opponentSortedCards.indexOf(stock), 1);
-            clickOpponentSortCardBtn();
+    if(document.getElementById("price-over-profits").checked || document.getElementById("dividend-yield").checked || document.getElementById("roe").checked) { 
+        let stock = sortCard(enterpriseCardsCopy);
+        opponentSortedCards.push(stock.ticker);
+        if(playerSortedCards[playerSortedCards.length - 1] !== opponentSortedCards[opponentSortedCards.length - 1] ) {
+            showOpponentCard(stock);
+            enterpriseCardsCopy.splice(enterpriseCardsCopy.indexOf(stock), 1);
+            checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
+            rounds += 1;
+            checkMasterOfStocks();
+        } else if (playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1] && playerSortedCards.length === maxCards){
+            console.log("Empate na última rodada, sem pontos adicionados");
+            checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
+            rounds += 1;
+            checkMasterOfStocks();
+        } else {
+            while(playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1]){
+                opponentSortedCards.splice(opponentSortedCards.indexOf(stock), 1);
+                clickOpponentSortCardBtn();
+            }
         }
-    }
-    if(rounds +1 <= 5){
-        document.getElementById("round-value").innerText = `Rodada: ${rounds + 1}`;
+        if(rounds +1 <= 5){
+            document.getElementById("round-value").innerText = `Rodada: ${rounds + 1}`;
+        } else {
+            document.getElementById("round-value").innerText = `Fim de jogo`;
+        }  
     } else {
-        document.getElementById("round-value").innerText = `Fim de jogo`;
-    }  
+        alert("Selecione um indicador antes de sortear o adversário!")
+    }
 });
