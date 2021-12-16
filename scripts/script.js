@@ -93,6 +93,8 @@ const checkRoundWinner = (playerEnterpriseStock, opponentEnterpriseStock) => {
     } else if (playerValue < opponentValue){
         document.getElementById("opponent-score").innerHTML = `Pontuação: ${opponentScore +=1}`;
         summaryElement.innerText = `Jogador perdeu rodada ${rounds + 1}`
+    } else { 
+        summaryElement.innerText = `Empate na rodada ${rounds + 1}`
     }
 }
 
@@ -121,6 +123,10 @@ const checkMasterOfStocks  = () => {
             lossImg.src = `images/fit-cow-b3.jpeg`;
             document.getElementById("result").appendChild(lossText);
             document.getElementById("result").appendChild(lossImg);
+        } else {
+            const tieText = document.createElement("p");
+            tieText.innerText = `Placar final: ${playerScore} x ${opponentScore}. Empate!`
+            document.getElementById("result").appendChild(tieText);
         }
     window.scrollTo({ top: 0, behavior: 'smooth' }); 
     }
@@ -149,6 +155,7 @@ document.getElementById("opponent-sort-btn").addEventListener("click", () => {
         checkMasterOfStocks();
     } else if (playerSortedCards[playerSortedCards.length - 1] === opponentSortedCards[opponentSortedCards.length - 1] && playerSortedCards.length === maxCards){
         console.log("Empate na última rodada, sem pontos adicionados");
+        checkRoundWinner(playerSortedCardsObject[playerSortedCards.length - 1], stock);
         rounds += 1;
         checkMasterOfStocks();
     } else {
