@@ -104,25 +104,26 @@ h1 {
     }
 
     #result > img {
-        width: 400px;
+        width: 300px;
     }
 
     #logo-stock-player, #logo-stock-opponent {
-        width: 200px;
+        width: 160px;
     }
 
     .image-container {
         display: flex;
         justify-content: center;
-        height: 210px
+        height: 180px
     }
 
     .metrics {
-        padding: 3px
+        padding: 1px
     }
 
     h1 {
         font-size: 22px;
+        margin: 4px 0 0;
     }
 
     h2 {
@@ -140,5 +141,13 @@ h1 {
     h5 {
         font-size: 14px;
         margin: 4px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+    
+    #round-value {
+        margin: 8px 0
     }
 }
