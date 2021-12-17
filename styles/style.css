@@ -110,17 +110,17 @@ h1 {
     } 
 
     #result > img {
-        width: 300px;
+        width: 200px;
     }
 
     #logo-stock-player, #logo-stock-opponent {
-        width: 100px;
+        width: 80px;
     }
 
     .image-container {
         display: flex;
         justify-content: center;
-        height: 120px
+        height: 100px
     }
 
     .metrics {
@@ -128,30 +128,30 @@ h1 {
     }
 
     .metrics > div > p, input[type="radio"] {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .sort-stock-button {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     h1 {
-        font-size: 20px;
-        margin: 4px 0 0;
+        font-size: 18px;
+        margin: 2px 0 0;
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 16px;
         margin: 6px 0;
     }
 
     h3 {
-        font-size: 16px;
+        font-size: 14px;
         margin: 2px 0;
     }
 
     h4 {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     h5 {
@@ -164,6 +164,6 @@ h1 {
     }
     
     #round-value {
-        margin: 5px 0
+        margin: 3px 0
     }
 }
