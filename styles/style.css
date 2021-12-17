@@ -93,11 +93,6 @@ h1 {
 
 @media (max-width: 850px) {
 
-    #video {
-        width: 160px;
-        height: 90px;
-    } 
-
     #campo-de-batalha {
         display: flex;
         justify-content: space-around;
@@ -106,25 +101,38 @@ h1 {
 
     .player-container, .opponent-container {
         width: 300px;
-        margin: auto
+        margin: auto;
     }
+
+    #video {
+        width: 160px;
+        height: 90px;
+    } 
 
     #result > img {
         width: 300px;
     }
 
     #logo-stock-player, #logo-stock-opponent {
-        width: 130px;
+        width: 100px;
     }
 
     .image-container {
         display: flex;
         justify-content: center;
-        height: 150px
+        height: 120px
     }
 
     .metrics {
         padding: 1px
+    }
+
+    .metrics > div > p, input[type="radio"] {
+        font-size: 14px;
+    }
+
+    .sort-stock-button {
+        font-size: 20px;
     }
 
     h1 {
