@@ -92,6 +92,12 @@ h1 {
 }
 
 @media (max-width: 850px) {
+
+    #video {
+        width: 160px;
+        height: 90px;
+    } 
+
     #campo-de-batalha {
         display: flex;
         justify-content: space-around;
@@ -108,13 +114,13 @@ h1 {
     }
 
     #logo-stock-player, #logo-stock-opponent {
-        width: 160px;
+        width: 130px;
     }
 
     .image-container {
         display: flex;
         justify-content: center;
-        height: 180px
+        height: 150px
     }
 
     .metrics {
@@ -122,32 +128,34 @@ h1 {
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 20px;
         margin: 4px 0 0;
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 18px;
+        margin: 6px 0;
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 16px;
+        margin: 2px 0;
     }
 
     h4 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     h5 {
-        font-size: 14px;
+        font-size: 12px;
         margin: 4px;
     }
 
     p {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     #round-value {
-        margin: 8px 0
+        margin: 5px 0
     }
 }
