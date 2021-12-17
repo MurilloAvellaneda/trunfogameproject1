@@ -69,13 +69,13 @@ h1 {
     margin: 10px 0 0;
 }
 
-.sort-stock-button {
+.sort-stock-button, #new-game {
     margin:5px 0;
     font-size: 25px;
     color: rgb(19,65,101)
 }
 
-.sort-stock-button:hover {
+.sort-stock-button:hover, #new-game:hover {
     background-color: rgb(19,65,101);
     color: white;
     cursor: pointer
@@ -85,10 +85,13 @@ h1 {
     text-align: center;
     font-size: 50px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #result > img {
-    width: 685px;
+    width: 520px;
 }
 
 @media (max-width: 850px) {

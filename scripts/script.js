@@ -128,7 +128,8 @@ const checkMasterOfStocks  = () => {
             tieText.innerText = `Placar final: ${playerScore} x ${opponentScore}. Empate!`
             document.getElementById("result").appendChild(tieText);
         }
-    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById("result").innerHTML += `<input type="button" id="new-game" value="Jogar Novamente" onClick="window.location.reload(true)"></input>`;
     }
 }
 
