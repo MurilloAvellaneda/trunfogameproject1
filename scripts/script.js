@@ -147,7 +147,7 @@ document.getElementById("player-sort-btn").addEventListener("click", () => {
 });
 
 document.getElementById("opponent-sort-btn").addEventListener("click", () => {
-    if(document.getElementById("price-over-profits").checked || document.getElementById("dividend-yield").checked || document.getElementById("roe").checked) { 
+    if((document.getElementById("price-over-profits").checked || document.getElementById("dividend-yield").checked || document.getElementById("roe").checked) && playerSortedCards.length - 1 === opponentSortedCards.length) { 
         let stock = sortCard(enterpriseCardsCopy);
         opponentSortedCards.push(stock.ticker);
         if(playerSortedCards[playerSortedCards.length - 1] !== opponentSortedCards[opponentSortedCards.length - 1] ) {
@@ -173,6 +173,6 @@ document.getElementById("opponent-sort-btn").addEventListener("click", () => {
             document.getElementById("round-value").innerText = `Fim de jogo`;
         }  
     } else {
-        alert("Selecione um indicador antes de sortear o adversário!")
+        alert("Selecione um indicador antes de sortear o adversário ou sorteie uma nova empresa para o jogador!")
     }
 });
