@@ -45,7 +45,7 @@ h5 {
 
 .metrics {
     background-color: white;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 #logo-stock-player, #logo-stock-opponent, .sort-stock-button {
@@ -71,6 +71,10 @@ h1 {
     text-align: center;
     border-bottom: rgb(114,51,20) solid 2px;
     margin: 10px 0 0;
+}
+
+h2 {
+    color: white
 }
 
 h6, ol { 
@@ -103,6 +107,10 @@ h6, ol {
 
 #result > img {
     width: 520px;
+}
+
+#player-score, #opponent-score{
+    background-color: rgb(19,65,101);
 }
 
 @media (max-width: 850px) {
