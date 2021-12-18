@@ -36,7 +36,11 @@ h5 {
     background-color: white;
     font-size: 18px;
     margin: 16px;
-    border: rgb(114,51,20) solid 2px;
+    border-bottom: rgb(114,51,20) solid 2px;
+}
+
+#summary-div {
+    background-color: white;
 }
 
 .metrics {
@@ -67,6 +71,13 @@ h1 {
     text-align: center;
     border-bottom: rgb(114,51,20) solid 2px;
     margin: 10px 0 0;
+}
+
+h6, ol { 
+    background-color: white;
+    font-size: 14px;
+    margin: 2px;
+    border: rgb(114,51,20) solid 0.5px;
 }
 
 .sort-stock-button, #new-game {
@@ -159,7 +170,14 @@ h1 {
 
     h5 {
         font-size: 12px;
-        margin: 4px;
+        margin: 2px;
+    }
+
+    h6, ol { 
+        background-color: white;
+        font-size: 10px;
+        margin: 1px;
+        border: rgb(114,51,20) solid 0.5px;
     }
 
     p {

@@ -75,8 +75,11 @@ const checkRoundWinner = (playerEnterpriseStock, opponentEnterpriseStock) => {
     let playerValue = 0;
     let opponentValue = 0;
     const summaryElement = document.createElement("h5");
+    const summaryElementDiv = document.createElement("div");
     summaryElement.setAttribute("id", "summary");
-    document.getElementById("round-counter").appendChild(summaryElement);
+    summaryElementDiv.setAttribute("id", "summary-div");
+    document.getElementById("round-counter").appendChild(summaryElementDiv);
+    document.getElementById("summary-div").appendChild(summaryElement);
     if(document.getElementById("price-over-profits").checked) { 
         playerValue = playerEnterpriseStock.priceOverProfits;
         opponentValue = opponentEnterpriseStock.priceOverProfits;
